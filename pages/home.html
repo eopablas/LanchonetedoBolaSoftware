@@ -1,429 +1,1018 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="png" href="../assets/images/logoIcon.ico">
-    
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logoIcon.ico">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../assets/css/home.css">
-    
-    <!--Fontes do Google-->
+
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <title>Lanchonete do Bola</title>
 </head>
 
 <body class="bg-dark text-white">
+
+    <!-- =====================================================
+         HEADER / NAVBAR
+    ====================================================== -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
+
             <div class="container-fluid px-4">
 
                 <a class="navbar-brand d-flex align-items-center gap-2" href="home.html">
-                    <img src="../assets/images/LogoTipografia.png" alt="Logo Lanchonete do Bola" class="logo">
+                    <img
+                        src="../assets/images/LogoTipografia.png"
+                        alt="Logo Lanchonete do Bola"
+                        class="logo"
+                    >
                 </a>
-                
-                <button 
-                class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#menuPrincipal"
-                aria-controls="menuPrincipal"
-                aria-expanded="false"
-                aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav align-items-lg-center gap-lg-1">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#inicio">Início</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cardapio">
-                            Cardápio
+                <!-- Menu -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <ul class="navbar-nav align-items-lg-center gap-lg-1">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#inicio">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cardapio">
+                                Cardápio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quemSomos">
+                                Quem somos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">
+                                Contato
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <div class="acoes-navbar ms-lg-auto">
+
+                        <div class="pesquisa-container">
+
+                            <input
+                                type="text"
+                                id="campoPesquisa"
+                                class="campo-pesquisa"
+                                placeholder="Buscar no cardápio..."
+                            >
+
+                            <button
+                                type="button"
+                                class="icone-navbar"
+                                id="btnPesquisa"
+                                aria-label="Pesquisar"
+                            >
+                                <img
+                                    src="../assets/images/lupa.png"
+                                    alt="Lupa de pesquisa"
+                                    class="icone-pesquisa"
+                                >
+                            </button>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="icone-navbar perfil"
+                            id="btnPerfil"
+                            title="Perfil"
+                            aria-label="Perfil"
+                        >
+                            <img
+                                src="../assets/images/perfilIcone.png"
+                                alt="Perfil"
+                                class="icone-perfil"
+                            >
                         </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#quemSomos">
-                            Quem somos
+                        <a
+                            href="#"
+                            class="icone-navbar carrinho"
+                            id="carrinho"
+                            title="Carrinho"
+                            aria-label="Carrinho"
+                        >
+                            <img
+                                src="../assets/images/carrinho-de-compras.png"
+                                alt="Carrinho"
+                                class="icone-carrinho"
+                            >
                         </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contato">
-                            Contato
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="acoes-navbar ms-lg-auto">
-
-                    <div class="pesquisa-container">
-                        
-                        <input type="text" id="campoPesquisa" class="campo-pesquisa" placeholder="Buscar no cardápio...">
-
-                        <button type="button" class="icone-navbar" id="btnPesquisa" aria-label="Pesquisar">
-
-                            <img src="../assets/images/lupa.png" alt="Lupa de Pesquisa" class="icone-pesquisa">
-
+                        <button
+                            type="button"
+                            class="btn-sair"
+                            id="btnSair"
+                        >
+                            Sair
                         </button>
 
                     </div>
 
-                    <a href="perfil.html" class="icone-navbar" title="Meu perfil" aria-label="Meu perfil">
-
-                        <img src="../assets/images/perfilIcone.png" alt="Icone perfil" class="icone-perfil">
-
-                    </a>
-
-                    <a href="#" class="icone-navbar carrinho" id="carrinho" title="Carrinho">
-
-                        <img src="../assets/images/carrinho-de-compras.png" alt="Carrinho" class="icone-carrinho">
-                    </a>
-
-                    <button type="button" class="btn-sair" id="btnSair">Sair</button>
                 </div>
-            </div>    
-        </div>
+
+            </div>
+
         </nav>
     </header>
-
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
     <main>
-<section id="inicio" class="hero-section d-flex align-items-center">
+        <section id="inicio" class="hero-section d-flex align-items-center">
 
-    <div class="hero-imagem-wrapper">
-        <img src="../assets/images/lancheBola.png"
-             alt="Hambúrguer artesanal Lanchonete do Bola"
-             class="hero-imagem">
-    </div>
+            <div class="hero-imagem-wrapper">
+                <img
+                    src="../assets/images/lancheBola.png"
+                    alt="Hambúrguer artesanal Lanchonete do Bola"
+                    class="hero-imagem"
+                >
+            </div>
 
-    <div class="hero-overlay"></div>
+            <div class="hero-overlay"></div>
 
-    <div class="container position-relative">
-        <div class="row align-items-center">
+            <div class="container position-relative">
 
-            <div class="col-lg-6 col-12">
-                <span class="badges-frescos">
-                    <i class="ti ti-clock"></i> Feito na hora com ingredientes frescos
-                </span>
+                <div class="row align-items-center">
 
-                <h1 class="hero-titulo">
-                    Sabor que <span class="destaque">impressiona!</span>
-                </h1>
+                    <div class="col-lg-6 col-12">
 
-                <p class="hero-texto">
-                    Lanches artesanais, ingredientes selecionados e muito amor em cada detalhe.
-                    Peça agora e sinta o verdadeiro sabor da vitória!
+                        <span class="badges-frescos">
+                            <i class="ti ti-clock"></i>
+                            Feito na hora com ingredientes frescos
+                        </span>
+
+                        <h1 class="hero-titulo">
+                            Sabor que
+                            <span class="destaque">impressiona!</span>
+                        </h1>
+
+                        <p class="hero-texto">
+                            Lanches artesanais, ingredientes selecionados e muito
+                            amor em cada detalhe. Peça agora e sinta o verdadeiro
+                            sabor da vitória!
+                        </p>
+
+                        <div class="d-flex gap-3 flex-wrap mb-4">
+
+                            <a
+                                href="#cardapio"
+                                class="btn btn-hero-primario"
+                            >
+                                <i class="bi bi-bag-fill"></i>
+                                Faça seu pedido
+                            </a>
+
+                            <a
+                                href="#cardapio"
+                                class="btn btn-hero-outline"
+                            >
+                                <i class="bi bi-star-fill"></i>
+                                Ver destaques
+                            </a>
+
+                        </div>
+
+                        <div class="hero-selos d-flex gap-4 flex-wrap">
+
+                            <span>
+                                <i class="bi bi-truck"></i>
+                                Entrega rápida
+                            </span>
+
+                            <span>
+                                <i class="bi bi-shield-check"></i>
+                                Pagamento seguro
+                            </span>
+
+                            <span>
+                                <i class="bi bi-leaf"></i>
+                                Ingredientes frescos
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- =================================================
+             CARDÁPIO
+        ================================================== -->
+        <section id="cardapio" class="cardapio-section py-5">
+
+            <div class="container">
+                <div class="text-center mb-5">
+
+                    <h2 class="titulo-secao">
+                        Nosso Cardápio
+                    </h2>
+
+                    <p class="subtitulo-secao">
+                        Escolha sua categoria favorita e monte seu pedido
+                    </p>
+
+                </div>
+
+                <div
+                    class="filtros-categoria d-flex justify-content-center flex-wrap gap-2 mb-5"
+                >
+
+                    <button
+                        class="filtro-btn ativo"
+                        data-filtro="todos"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        class="filtro-btn"
+                        data-filtro="lanches"
+                    >
+                        Lanches
+                    </button>
+
+                    <button
+                        class="filtro-btn"
+                        data-filtro="porcoes"
+                    >
+                        Porções
+                    </button>
+
+                    <button
+                        class="filtro-btn"
+                        data-filtro="bebidas"
+                    >
+                        Bebidas
+                    </button>
+
+                    <button
+                        class="filtro-btn"
+                        data-filtro="sobremesas"
+                    >
+                        Sobremesas
+                    </button>
+
+                </div>
+
+                <div class="row g-4" id="gridCardapio">
+
+                    <div
+                        class="col-6 col-md-4 col-lg-3 item-cardapio"
+                        data-categoria="lanches"
+                    >
+
+                        <div class="card-produto">
+
+                            <img
+                                src="../assets/images/xbola.png"
+                                alt="X-Bola"
+                                class="card-produto-img"
+                            >
+
+                            <div class="card-produto-corpo">
+
+                                <h3>
+                                    X-Bola
+                                </h3>
+
+                                <p>
+                                    Pão, blend artesanal, queijo, presunto,
+                                    alface, tomate, cebola e molho especial.
+                                </p>
+
+                                <div class="card-produto-rodape">
+
+                                    <span class="card-produto-preco">
+                                        R$ 28,90
+                                    </span>
+
+                                    <button
+                                        class="btn-add-produto"
+                                        aria-label="Adicionar X-Bola"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="col-6 col-md-4 col-lg-3 item-cardapio"
+                        data-categoria="lanches"
+                    >
+
+                        <div class="card-produto">
+
+                            <img
+                                src="../assets/images/xsalada.png"
+                                alt="X-Salada"
+                                class="card-produto-img"
+                            >
+
+                            <div class="card-produto-corpo">
+
+                                <h3>
+                                    X-Salada
+                                </h3>
+
+                                <p>
+                                    Pão, blend artesanal, alface, tomate,
+                                    cebola, maionese e molho.
+                                </p>
+
+                                <div class="card-produto-rodape">
+
+                                    <span class="card-produto-preco">
+                                        R$ 26,90
+                                    </span>
+
+                                    <button
+                                        class="btn-add-produto"
+                                        aria-label="Adicionar X-Salada"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="col-6 col-md-4 col-lg-3 item-cardapio"
+                        data-categoria="lanches"
+                    >
+
+                        <div class="card-produto">
+
+                            <img
+                                src="../assets/images/xbacon.png"
+                                alt="X-Bacon"
+                                class="card-produto-img"
+                            >
+
+                            <div class="card-produto-corpo">
+
+                                <h3>
+                                    X-Bacon
+                                </h3>
+
+                                <p>
+                                    Pão, blend artesanal, queijo, bacon
+                                    crocante, alface e tomate.
+                                </p>
+
+                                <div class="card-produto-rodape">
+
+                                    <span class="card-produto-preco">
+                                        R$ 31,90
+                                    </span>
+
+                                    <button
+                                        class="btn-add-produto"
+                                        aria-label="Adicionar X-Bacon"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="col-6 col-md-4 col-lg-3 item-cardapio"
+                        data-categoria="porcoes"
+                    >
+
+                        <div class="card-produto">
+
+                            <img
+                                src="../assets/images/batata.png"
+                                alt="Batata Especial"
+                                class="card-produto-img"
+                            >
+
+                            <div class="card-produto-corpo">
+
+                                <h3>
+                                    Batata Especial
+                                </h3>
+
+                                <p>
+                                    Batata frita crocante com cheddar
+                                    e bacon.
+                                </p>
+
+                                <div class="card-produto-rodape">
+
+                                    <span class="card-produto-preco">
+                                        R$ 18,90
+                                    </span>
+
+                                    <button
+                                        class="btn-add-produto"
+                                        aria-label="Adicionar Batata Especial"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="col-6 col-md-4 col-lg-3 item-cardapio"
+                        data-categoria="bebidas"
+                    >
+
+                        <div class="card-produto">
+
+                            <img
+                                src="../assets/images/refridobola.png"
+                                alt="Refrigerante em lata"
+                                class="card-produto-img"
+                            >
+
+                            <div class="card-produto-corpo">
+
+                                <h3>
+                                    Refri Lata
+                                </h3>
+
+                                <p>
+                                    Escolha sua opção favorita de sabor.
+                                </p>
+
+                                <div class="card-produto-rodape">
+
+                                    <span class="card-produto-preco">
+                                        R$ 7,00
+                                    </span>
+
+                                    <button
+                                        class="btn-add-produto"
+                                        aria-label="Adicionar Refri Lata"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p
+                    id="cardapioVazio"
+                    class="text-center text-muted mt-4"
+                    style="display: none;"
+                >
+                    Nenhum item encontrado nessa categoria.
                 </p>
 
-                <div class="d-flex gap-3 flex-wrap mb-4">
-                    <a href="#cardapio" class="btn btn-hero-primario">
-                        <i class="ti ti-shopping-bag"></i> Faça seu pedido
-                    </a>
-                    <a href="#cardapio" class="btn btn-hero-outline">
-                        <i class="ti ti-star"></i> Ver destaques
-                    </a>
-                </div>
-
-                <div class="hero-selos d-flex gap-4 flex-wrap">
-                    <span><i class="ti ti-truck"></i> Entrega rápida</span>
-                    <span><i class="ti ti-shield-check"></i> Pagamento seguro</span>
-                    <span><i class="ti ti-leaf"></i> Ingredientes frescos</span>
-                </div>
             </div>
 
-        </div>
-    </div>
-</section>
-<section id="cardapio" class="cardapio-section py-5">
-    <div class="container">
+        </section>
+        <!-- =================================================
+             QUEM SOMOS
+        ================================================== -->
+        <section id="quemSomos" class="quemsomos-section py-5">
 
-        <div class="text-center mb-5">
-            <h2 class="titulo-secao">Nosso Cardápio</h2>
-            <p class="subtitulo-secao">Escolha sua categoria favorita e monte seu pedido</p>
-        </div>
+            <div class="container">
 
-        <div class="filtros-categoria d-flex justify-content-center flex-wrap gap-2 mb-5">
-            <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
-            <button class="filtro-btn" data-filtro="lanches">Lanches</button>
-            <button class="filtro-btn" data-filtro="porcoes">Porções</button>
-            <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
-            <button class="filtro-btn" data-filtro="sobremesas">Sobremesas</button>
-        </div>
+                <div class="row align-items-center g-5">
 
-        <div class="row g-4" id="gridCardapio">
+                    <div class="col-lg-6 order-lg-1 order-2">
 
-            <div class="col-6 col-md-4 col-lg-3 item-cardapio" data-categoria="lanches">
-                <div class="card-produto">
-                    <img src="../assets/images/xbola.png" alt="X-Bola" class="card-produto-img">
-                    <div class="card-produto-corpo">
-                        <h3>X-Bola</h3>
-                        <p>Pão, blend artesanal, queijo, presunto, alface, tomate, cebola e molho especial.</p>
-                        <div class="card-produto-rodape">
-                            <span class="card-produto-preco">R$ 28,90</span>
-                            <button class="btn-add-produto" aria-label="Adicionar X-Bola">
-                                <i class="ti ti-plus"></i>
-                            </button>
+                        <div class="quemsomos-imagem-wrapper">
+
+                            <img
+                                src="../assets/images/equipebola.png"
+                                alt="Equipe da Lanchonete do Bola"
+                                class="quemsomos-imagem"
+                            >
+
+                            <div class="quemsomos-selo">
+
+                                <i class="bi bi-award-fill"></i>
+
+                                <span>
+                                    Desde 2020
+                                </span>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-6 col-md-4 col-lg-3 item-cardapio" data-categoria="lanches">
-                <div class="card-produto">
-                    <img src="../assets/images/xsalada.png" alt="X-Salada" class="card-produto-img">
-                    <div class="card-produto-corpo">
-                        <h3>X-Salada</h3>
-                        <p>Pão, blend artesanal, alface, tomate, cebola, maionese e molho.</p>
-                        <div class="card-produto-rodape">
-                            <span class="card-produto-preco">R$ 26,90</span>
-                            <button class="btn-add-produto" aria-label="Adicionar X-Salada">
-                                <i class="ti ti-plus"></i>
-                            </button>
+                    </div>
+
+                    <div class="col-lg-6 order-lg-2 order-1">
+
+                        <span class="badges-frescos">
+                            <i class="bi bi-info-circle"></i>
+                            Nossa história
+                        </span>
+
+                        <h2 class="quemsomos-titulo">
+                            Mais que lanches, é
+                            <span class="destaque">
+                                amor pelo lanche.
+                            </span>
+                        </h2>
+
+                        <p class="quemsomos-texto">
+                            Dizem que tamanho não é documento…mas aqui no Bola a história é diferente! 😂🍔 O lanche é caprichado, recheado e feito pra acabar com aquela fome de verdade. Porque se é pra comer, que seja no estilo do Bola: grande, gostoso e sem miséria!
+
+                        </p>
+
+                        <p class="quemsomos-texto">
+                           Hoje, o Bola é muito mais que uma lanchonete: é aquele lugar onde a fome vira resenha, o lanche vira experiência e cada mordida tem aquele sabor caprichado que faz você querer voltar. Aqui, a gente serve do nosso jeito: sem frescura, com qualidade e com muito sabor.
+                        </p>
+
+                        <div class="row g-3 mt-3">
+
+                            <div class="col-4">
+                                <div class="quemsomos-stat">
+
+                                    <strong>
+                                        5+
+                                    </strong>
+
+                                    <span>
+                                        Anos de história
+                                    </span>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-4">
+                                <div class="quemsomos-stat">
+
+                                    <strong>
+                                        50k+
+                                    </strong>
+
+                                    <span>
+                                        Clientes satisfeitos
+                                    </span>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-4">
+                                <div class="quemsomos-stat">
+
+                                    <strong>
+                                        4.9
+                                    </strong>
+
+                                    <span>
+                                        Avaliação média
+                                    </span>
+
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <div class="col-6 col-md-4 col-lg-3 item-cardapio" data-categoria="lanches">
-                <div class="card-produto">
-                    <img src="../assets/images/xbacon.png" alt="X-Bacon" class="card-produto-img">
-                    <div class="card-produto-corpo">
-                        <h3>X-Bacon</h3>
-                        <p>Pão, blend artesanal, queijo, bacon crocante, alface e tomate.</p>
-                        <div class="card-produto-rodape">
-                            <span class="card-produto-preco">R$ 31,90</span>
-                            <button class="btn-add-produto" aria-label="Adicionar X-Bacon">
-                                <i class="ti ti-plus"></i>
-                            </button>
+        </section>
+
+        <!-- =================================================
+             CONTATO
+        ================================================== -->
+        <section id="contato" class="contato-section py-5">
+
+            <div class="container">
+                <div class="text-center mb-5">
+
+                    <span class="badges-frescos">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        Fale conosco
+                    </span>
+
+                    <h2 class="titulo-secao">
+                        Entre em Contato
+                    </h2>
+
+                    <p class="subtitulo-secao">
+                        Estamos prontos para atender você da melhor forma
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="contato-info-card mb-3">
+
+                            <div class="contato-icone">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Endereço
+                                </h3>
+
+                                <p>
+                                    Rua Padre Pedro Pinto, 442,
+                                    Lojas 1 e 2, Venda Nova
+                                    <br>
+                                    Belo Horizonte, MG -
+                                    CEP 31610-000
+                                </p>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="contato-info-card mb-3">
 
-            <div class="col-6 col-md-4 col-lg-3 item-cardapio" data-categoria="porcoes">
-                <div class="card-produto">
-                    <img src="../assets/images/batata.png" alt="Batata Especial" class="card-produto-img">
-                    <div class="card-produto-corpo">
-                        <h3>Batata Especial</h3>
-                        <p>Batata frita crocante com cheddar e bacon.</p>
-                        <div class="card-produto-rodape">
-                            <span class="card-produto-preco">R$ 18,90</span>
-                            <button class="btn-add-produto" aria-label="Adicionar Batata Especial">
-                                <i class="ti ti-plus"></i>
-                            </button>
+                            <div class="contato-icone">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Horário de funcionamento
+                                </h3>
+
+                                <p>
+                                    Terça a domingo: 18h às 23h
+                                    <br>
+                                    Segunda: fechado
+                                </p>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 item-cardapio" data-categoria="bebidas">
-                <div class="card-produto">
-                    <img src="../assets/images/refridobola.png" alt="Refri Lata" class="card-produto-img">
-                    <div class="card-produto-corpo">
-                        <h3>Refri Lata</h3>
-                        <p>Escolha sua opção favorita de sabor.</p>
-                        <div class="card-produto-rodape">
-                            <span class="card-produto-preco">R$ 7,00</span>
-                            <button class="btn-add-produto" aria-label="Adicionar Refri Lata">
-                                <i class="ti ti-plus"></i>
-                            </button>
+
+                        <div class="contato-info-card mb-3">
+
+                            <div class="contato-icone">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Telefone / WhatsApp
+                                </h3>
+
+                                <p>
+                                    (31) 99999-9999
+                                </p>
+
+                            </div>
+
                         </div>
+
+                        <div class="contato-redes">
+
+                            <a
+                                href="#"
+                                class="contato-rede-icone"
+                                aria-label="Instagram"
+                            >
+                                <i class="bi bi-instagram"></i>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="contato-rede-icone"
+                                aria-label="Facebook"
+                            >
+                                <i class="bi bi-facebook"></i>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="contato-rede-icone"
+                                aria-label="WhatsApp"
+                            >
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+
+                        </div>
+
                     </div>
-                </div>
-            </div>
-        <p id="cardapioVazio" class="text-center text-muted mt-4" style="display:none;">
-            Nenhum item encontrado nessa categoria.
-        </p>
 
-    </div>
-</section>
+                    <div class="col-lg-7">
 
-<section id="quemSomos" class="quemsomos-section py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
+                        <div class="contato-form-card">
 
-            <!-- Imagem -->
-            <div class="col-lg-6 order-lg-1 order-2">
-                <div class="quemsomos-imagem-wrapper">
-                    <img src="../assets/images/equipebola.png"
-                         alt="Equipe da Lanchonete do Bola"
-                         class="quemsomos-imagem">
-                    <div class="quemsomos-selo">
-                        <i class="ti ti-crown"></i>
-                        <span>Desde 2020</span>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+
+                                    <label
+                                        for="nomeContato"
+                                        class="form-label-contato"
+                                    >
+                                        Nome
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="nomeContato"
+                                        class="form-control-contato"
+                                        placeholder="Seu nome"
+                                    >
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label
+                                        for="emailContato"
+                                        class="form-label-contato"
+                                    >
+                                        E-mail
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="emailContato"
+                                        class="form-control-contato"
+                                        placeholder="seu@email.com"
+                                    >
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <label
+                                        for="assuntoContato"
+                                        class="form-label-contato"
+                                    >
+                                        Assunto
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="assuntoContato"
+                                        class="form-control-contato"
+                                        placeholder="Sobre o que você quer falar?"
+                                    >
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <label
+                                        for="mensagemContato"
+                                        class="form-label-contato"
+                                    >
+                                        Mensagem
+                                    </label>
+
+                                    <textarea
+                                        id="mensagemContato"
+                                        class="form-control-contato"
+                                        rows="4"
+                                        placeholder="Escreva sua mensagem..."
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-hero-primario w-100"
+                                        id="btnEnviarContato"
+                                    >
+                                        <i class="ti ti-send"></i>
+                                        Enviar mensagem
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Texto -->
-            <div class="col-lg-6 order-lg-2 order-1">
-                <span class="badges-frescos">
-                    <i class="ti ti-info-circle"></i> Nossa história
-                </span>
+        </section>
 
-                <h2 class="quemsomos-titulo">
-                    Paixão pelo futebol, <span class="destaque">amor pelo lanche.</span>
-                </h2>
+    </main>
 
-                <p class="quemsomos-texto">
-                    A Lanchonete do Bola nasceu da vontade de unir dois grandes prazeres:
-                    o sabor de um bom lanche artesanal e a emoção do futebol. Cada receita é
-                    pensada como uma jogada bem treinada — ingredientes selecionados, preparo
-                    cuidadoso e muito amor em cada detalhe, pra garantir que cada mordida seja
-                    digna de comemoração.
+    <!-- =====================================================
+         POPUP DE PERFIL
+    ====================================================== -->
+    <div
+        class="popup-perfil-fundo"
+        id="popupPerfilFundo"
+    >
+
+        <div class="popup-perfil-card">
+
+            <button
+                type="button"
+                class="popup-perfil-fechar"
+                id="btnFecharPerfil"
+                aria-label="Fechar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="popup-perfil-topo">
+
+                <div class="popup-perfil-avatar-wrapper">
+
+                    <img
+                        src="../assets/images/perfilIcone.png"
+                        alt="Ícone do usuário"
+                        class="popup-perfil-avatar"
+                    >
+
+                </div>
+
+                <h3 id="popupPerfilNome">
+                    Usuário
+                </h3>
+
+                <p id="popupPerfilEmail">
+                    email@exemplo.com
                 </p>
 
-                <p class="quemsomos-texto">
-                    Hoje, somos referência no bairro, servindo quem busca autenticidade,
-                    qualidade e aquele sabor que só o "time da casa" sabe fazer.
-                </p>
-
-                <div class="row g-3 mt-3">
-                    <div class="col-4">
-                        <div class="quemsomos-stat">
-                            <strong>5+</strong>
-                            <span>Anos de história</span>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="quemsomos-stat">
-                            <strong>50k+</strong>
-                            <span>Clientes satisfeitos</span>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="quemsomos-stat">
-                            <strong>4.9</strong>
-                            <span>Avaliação média</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
+            <div class="popup-perfil-divisor"></div>
+
+            <ul class="popup-perfil-lista">
+
+            <div class="popup-perfil-divisor"></div>
+
+            <button
+                type="button"
+                class="popup-perfil-sair"
+                id="btnSairPopup"
+            >
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sair da conta</span>
+            </button>
+
         </div>
+
     </div>
-</section>
 
-<section id="contato" class="contato-section py-5">
-    <div class="container">
+<div class="carrinho-fundo" id="carrinhoFundo"></div>
 
-        <div class="text-center mb-5">
-            <span class="badges-frescos">
-                <i class="ti ti-message-circle"></i> Fale conosco
-            </span>
-            <h2 class="titulo-secao">Entre em Contato</h2>
-            <p class="subtitulo-secao">Estamos prontos para atender você da melhor forma</p>
+<aside class="carrinho-lateral" id="carrinhoLateral">
+
+    <div class="carrinho-cabecalho">
+
+        <div>
+            <h2>Seu carrinho</h2>
+            <span id="quantidadeCarrinho">0 itens</span>
         </div>
 
-        <div class="row g-4">
-            <div class="col-lg-5">
-                <div class="contato-info-card mb-3">
-                    <div class="contato-icone">
-                        <i class="ti ti-map-pin"></i>
-                    </div>
-                    <div>
-                        <h3>Endereço</h3>
-                        <p>Rua Padre Pedro Pinto, 442, Lojas 1 e 2, Venda Nova<br>Belo Horizonte, MG - CEP 31610-000</p>
-                    </div>
-                </div>
+        <button
+            type="button"
+            class="carrinho-fechar"
+            id="btnFecharCarrinho"
+            aria-label="Fechar carrinho"
+        >
+            <i class="bi bi-x-lg"></i>
+        </button>
 
-                <div class="contato-info-card mb-3">
-                    <div class="contato-icone">
-                        <i class="ti ti-clock"></i>
-                    </div>
-                    <div>
-                        <h3>Horário de funcionamento</h3>
-                        <p>Terça a domingo: 18h às 23h<br>Segunda: fechado</p>
-                    </div>
-                </div>
-
-                <div class="contato-info-card mb-3">
-                    <div class="contato-icone">
-                        <i class="ti ti-phone"></i>
-                    </div>
-                    <div>
-                        <h3>Telefone / WhatsApp</h3>
-                        <p>(31) 99999-9999</p>
-                    </div>
-                </div>
-
-                <div class="contato-redes">
-                    <a href="#" class="contato-rede-icone" aria-label="Instagram">
-                        <i class="ti ti-brand-instagram"></i>
-                    </a>
-                    <a href="#" class="contato-rede-icone" aria-label="Facebook">
-                        <i class="ti ti-brand-facebook"></i>
-                    </a>
-                    <a href="#" class="contato-rede-icone" aria-label="WhatsApp">
-                        <i class="ti ti-brand-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-7">
-                <div class="contato-form-card">
-                    <div class="row g-3">
-
-                        <div class="col-md-6">
-                            <label for="nomeContato" class="form-label-contato">Nome</label>
-                            <input type="text" id="nomeContato" class="form-control-contato" placeholder="Seu nome">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="emailContato" class="form-label-contato">E-mail</label>
-                            <input type="email" id="emailContato" class="form-control-contato" placeholder="seu@email.com">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="assuntoContato" class="form-label-contato">Assunto</label>
-                            <input type="text" id="assuntoContato" class="form-control-contato" placeholder="Sobre o que você quer falar?">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="mensagemContato" class="form-label-contato">Mensagem</label>
-                            <textarea id="mensagemContato" class="form-control-contato" rows="4" placeholder="Escreva sua mensagem..."></textarea>
-                        </div>
-
-                        <div class="col-12">
-                            <button type="button" class="btn btn-hero-primario w-100" id="btnEnviarContato">
-                                <i class="ti ti-send"></i> Enviar mensagem
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
-</section>
 
 
+    <div class="carrinho-conteudo" id="carrinhoConteudo">
+
+        <div class="carrinho-vazio" id="carrinhoVazio">
+
+            <i class="bi bi-cart-x"></i>
+
+            <h3>Seu carrinho está vazio</h3>
+
+            <p>
+                Adicione alguns produtos deliciosos
+                do nosso cardápio.
+            </p>
+
+        </div>
+
+    </div>
 
 
+    <div class="carrinho-rodape">
 
+        <div class="carrinho-total">
 
+            <span>Total</span>
 
+            <strong id="carrinhoTotal">
+                R$ 0,00
+            </strong>
 
+        </div>
 
+        <button
+            type="button"
+            class="btn-finalizar-pedido"
+            id="btnFinalizarPedido"
+        >
+            <i class="bi bi-bag-check-fill"></i>
+            Finalizar pedido
+        </button>
 
+    </div>
 
+</aside>
 
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
+    <script src="../js/home.js"></script>
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/home.js"></script>
 </body>
+
 </html>
