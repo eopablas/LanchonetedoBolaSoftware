@@ -37,5 +37,9 @@ formLogin.addEventListener("submit", function (event) {
     localStorage.setItem("nomeUsuario", nome);
     localStorage.setItem("emailUsuario", email);
 
+    alert("Login realizado com sucesso!");
+
+    sessionStorage.setItem("logado", "true");
+
     window.location.href = "pages/home.html";
 });
